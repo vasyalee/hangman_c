@@ -25,7 +25,9 @@ int main() {
     }
 
 
-    while (founded < toBeGuessed.size() - 1 && lives > 0) {
+    while (founded < toBeGuessed.size() && lives > 0) {
+        int newFounded = 0;
+        char inputChar = ' ';
         cout << "You currently have " << lives << " lives" << endl;
         for (int i = 0; i < toBeGuessed.size(); i++) {
             if (toBeGuessed[i] != '*') {
@@ -34,8 +36,34 @@ int main() {
             else {
                 cout << guessed[i];
             }
+
+        }
+        cout << endl;
+
+        cout << "Enter your letter: " << endl;
+        cin >> inputChar;
+        for (int i = 0; i < toBeGuessed.size(); i++) {
+            if (inputChar == toBeGuessed[i]) {
+                guessed[i] = toBeGuessed[i];
+                toBeGuessed[i] = '*';
+                founded++;
+                newFounded++;
+            }
+
+        }
+        if (newFounded == 0) {
+            lives--;
         }
 
+
+    }
+    if (lives > 0) {
+        cout << answer << endl;
+        cout << endl;
+        cout << "Congratulations! You won!" << endl;
+
+    } else {
+        cout << "Oops, see you next time!" << endl;
     }
 
 
