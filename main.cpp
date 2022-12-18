@@ -6,6 +6,70 @@
 
 
 using namespace std;
+void printHangman(int _lives) {
+    if (_lives == 10) {
+        cout << "|=======|" << endl;
+        cout << "|" << endl;
+        cout << "|" << endl;
+        cout << "|" << endl;
+        cout << endl;
+
+    } else if (_lives == 9) {
+        cout << "|=======|" << endl;
+        cout << "|\tO" << endl;
+        cout << "|" << endl;
+        cout << "|" << endl;
+    }
+    else if (_lives == 8) {
+        cout << "|=======|" << endl;
+        cout << "|\tO" << endl;
+        cout << "|" << endl;
+        cout << "|" << endl;
+    }
+    else if (_lives == 7) {
+        cout << "|=======|" << endl;
+        cout << "|\tO" << endl;
+        cout << "|       |" << endl;
+        cout << "|" << endl;
+    }
+    else if (_lives == 6) {
+        cout << "|=======|" << endl;
+        cout << "|\tO" << endl;
+        cout << "|       |" << endl;
+        cout << "|" << endl;
+    }
+    else if (_lives == 5) {
+        cout << "|=======|" << endl;
+        cout << "|\tO" << endl;
+        cout << "|      \\|" << endl;
+        cout << "|" << endl;
+    }
+    else if (_lives == 4) {
+        cout << "|=======|" << endl;
+        cout << "|\tO" << endl;
+        cout << "|      \\|/" << endl;
+        cout << "|" << endl;
+    }
+    else if (_lives == 3) {
+        cout << "|=======|" << endl;
+        cout << "|\tO" << endl;
+        cout << "|      \\|/" << endl;
+        cout << "|      /" << endl;
+    }
+    else if (_lives == 2) {
+        cout << "|=======|" << endl;
+        cout << "|\tO" << endl;
+        cout << "|      \\|/" << endl;
+        cout << "|      /" << endl;
+    }
+    else if (_lives == 1) {
+        cout << "|=======|" << endl;
+        cout << "|\tO" << endl;
+        cout << "|      \\|/" << endl;
+        cout << "|      /" << endl;
+    }
+
+}
 
 int main() {
 
@@ -88,7 +152,7 @@ while (true) {
         bool alreadyIn = false;
         int newFounded = 0;
         char inputChar = ' ';
-        cout << "\u2780" << endl;
+        printHangman(lives);
         cout << "You currently have " << lives << " lives" << endl;
         for (int i = 0; i < toBeGuessed.size(); i++) {
             if (toBeGuessed[i] != '*') {
@@ -146,8 +210,26 @@ while (true) {
         cout << "Congratulations! You won!" << endl;
 
     } else {
+        cout << "|=======|" << endl;
+        cout << "|\tO" << endl;
+        cout << "|      \\|/" << endl;
+        cout << "|      / \\" << endl;
+        cout << endl;
         cout << "Oops, you lost. The answer was: " << endl;
+
+
+        for (int i = 0; i < 15; i++) {
+            cout << char(205);
+        }
+        cout << endl;
+
         cout << answer << endl;
+
+
+        for (int i = 0; i < 15; i++) {
+            cout << char(205);
+        }
+
         cout << endl;
         cout << "Good luck for the next time!" << endl;
     }
