@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <stdio.h>
 #include <algorithm>
 #include <random>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -14,16 +14,59 @@ int main() {
 
 
     bool wishToContinue = true;
+    int topic;
+    string answer;
 
-
-    string words[3] = {"hermanos", "fuerteventura", "sotavento"};
-
-
-
+    string IT[10] = {"devops", "server", "client", "linux", "python",
+                     "javascript", "microsoft", "browser","intel", "motherboard" };
+    string crypto[10] = {"bitcoin", "ethereum", "cosmos", "node", "miner", "validator",
+                         "atom", "stablecoin", "uniswap", "cryptocurrency"};
 
 
 while (true) {
-    string answer = words[gen() % 3];
+    while (true) {
+        //Game menu
+        system("cls");
+        for (int i = 0; i < 15; i++) {
+            cout << char(205);
+        }
+        cout << endl;
+
+        cout << "Welcome to Hangman!" << endl;
+        cout << "Choose your topic for this game: " << endl;
+        cout << "[1] IT" << endl;
+        cout << "[2] crypto" << endl;
+        cout << "[0] exit" << endl;
+        for (int i = 0; i < 15; i++) {
+            cout << char(205);
+        }
+        cout << endl;
+        cin >> topic;
+        cin.clear();
+        cin.ignore(1024, '\n');
+
+        if (topic == 1) {
+            answer = IT[gen() % 10];
+            system("cls");
+            break;
+        } else if (topic == 2) {
+            answer = crypto[gen() % 10];
+            system("cls");
+            break;
+        } else if (topic == 0) {
+            system("cls");
+            cout << "Ok, see you next time!" << endl;
+            system("pause");
+            exit(0);
+        }
+        else {
+            system("cls");
+            cout << "No such option. Try again..." << endl;
+            system("pause");
+        }
+    }
+
+
     vector <char> guessed = {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'};
     vector <char> toBeGuessed = {};
     vector <char> alreadyUsed = {};
@@ -105,7 +148,9 @@ while (true) {
     cin.ignore(1024, '\n');
     if (inp == 'y') {
         wishToContinue = true;
+        system("cls");
     } else if (inp == 'n') {
+        system("cls");
         break;
     } else {
 
