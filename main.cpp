@@ -3,7 +3,7 @@
 #include <string>
 #include <algorithm>
 #include <random>
-#include <stdlib.h>
+
 
 using namespace std;
 
@@ -27,19 +27,26 @@ while (true) {
     while (true) {
         //Game menu
         system("cls");
-        for (int i = 0; i < 15; i++) {
+        cout << " " << char(186);
+        for (int i = 0; i < 35; i++) {
             cout << char(205);
         }
         cout << endl;
-
+        cout << " " << char(186);
         cout << "Welcome to Hangman!" << endl;
+        cout << " " << char(186);
         cout << "Choose your topic for this game: " << endl;
-        cout << "[1] IT" << endl;
-        cout << "[2] crypto" << endl;
-        cout << "[0] exit" << endl;
-        for (int i = 0; i < 15; i++) {
+        cout << " " << char(186);
+        cout << " [1] IT" << endl;
+        cout << " " << char(186);
+        cout << " [2] crypto" << endl;
+        cout << " " << char(186);
+        cout << " [0] exit" << endl;
+        cout << " " << char(186);
+        for (int i = 0; i < 35; i++) {
             cout << char(205);
         }
+
         cout << endl;
         cin >> topic;
         cin.clear();
@@ -81,6 +88,7 @@ while (true) {
         bool alreadyIn = false;
         int newFounded = 0;
         char inputChar = ' ';
+        cout << "\u2780" << endl;
         cout << "You currently have " << lives << " lives" << endl;
         for (int i = 0; i < toBeGuessed.size(); i++) {
             if (toBeGuessed[i] != '*') {
@@ -138,7 +146,10 @@ while (true) {
         cout << "Congratulations! You won!" << endl;
 
     } else {
-        cout << "Oops, see you next time!" << endl;
+        cout << "Oops, you lost. The answer was: " << endl;
+        cout << answer << endl;
+        cout << endl;
+        cout << "Good luck for the next time!" << endl;
     }
     wishToContinue = false;
     cout << "Want to try again? Press 'y' to try again or 'n' to exit" << endl;
