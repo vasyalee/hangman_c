@@ -81,10 +81,18 @@ int main() {
     int topic;
     string answer;
 
-    string IT[10] = {"devops", "server", "client", "linux", "python",
-                     "javascript", "microsoft", "browser","intel", "motherboard" };
-    string crypto[10] = {"bitcoin", "ethereum", "cosmos", "node", "miner", "validator",
-                         "atom", "stablecoin", "uniswap", "cryptocurrency"};
+
+    string crypto[20] = {"bitcoin", "ethereum", "cosmos", "defi", "miner", "validator",
+                         "atom", "stablecoin", "uniswap", "cryptocurrency", "exchange", "binance",
+                         "swap", "rugpool", "airdrop", "allocation", "near", "solidity", "web3", "tendermint"};
+    string films[22] = {"interstellar", "inception", "1917", "dunkirk", "alien", "starwars", "titanic", "terminator",
+                        "godfather", "shrek", "matrix", "avengers", "chinatown", "fargo", "taxi", "1+1", "fast&furious", "lebowski", "avatar",
+                        "transformers", "snatch", "it"};
+    string programmingLanguages[26] = {"python", "javascript", "c++", "c#", "java", "bash", "batch", "golang", "rustlang", "php", "move",
+                                   "pascal", "kotlin", "f#", "c", "brainfuck", "ruby", "typescript", "solidity", "swift",
+                                   "dart", "delphi", "assembly", "fortran", "groovy", "r"};
+    string cars = {"bentley", "alfaromeo", "bugatti", "chevrolet", "landrover", "baojun", "byd", "changan", "chery", "cnhtc", "dadi", "gelly",
+                   "lifan", "xinkai", "tianma", "marry", "bmw", "volvo", "mercedes", "audi", "ford", "k"};
 
 
 while (true) {
@@ -112,6 +120,7 @@ while (true) {
         }
 
         cout << endl;
+        cout << ">>> ";
         cin >> topic;
         cin.clear();
         cin.ignore(1024, '\n');
@@ -153,6 +162,7 @@ while (true) {
         int newFounded = 0;
         char inputChar = ' ';
         printHangman(lives);
+
         cout << "You currently have " << lives << " lives" << endl;
         for (int i = 0; i < toBeGuessed.size(); i++) {
             if (toBeGuessed[i] != '*') {
@@ -174,6 +184,7 @@ while (true) {
         cout << endl;
 
         cout << "Enter your letter: " << endl;
+        cout << ">>> ";
         cin >> inputChar;
         cin.clear();
         cin.ignore(1024, '\n');
