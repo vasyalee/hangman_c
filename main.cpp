@@ -79,6 +79,7 @@ int main() {
 
     bool wishToContinue = true;
     int topic;
+    string _topic;
     string answer;
 
 
@@ -91,8 +92,17 @@ int main() {
     string programmingLanguages[26] = {"python", "javascript", "c++", "c#", "java", "bash", "batch", "golang", "rustlang", "php", "move",
                                    "pascal", "kotlin", "f#", "c", "brainfuck", "ruby", "typescript", "solidity", "swift",
                                    "dart", "delphi", "assembly", "fortran", "groovy", "r"};
-    string cars = {"bentley", "alfaromeo", "bugatti", "chevrolet", "landrover", "baojun", "byd", "changan", "chery", "cnhtc", "dadi", "gelly",
-                   "lifan", "xinkai", "tianma", "marry", "bmw", "volvo", "mercedes", "audi", "ford", "k"};
+    string cars[64] = {"bentley", "alfaromeo", "bugatti", "chevrolet", "landrover", "baojun", "byd", "changan", "chery", "cnhtc", "dadi", "gelly",
+                   "lifan", "xinkai", "tianma", "marry", "bmw", "volvo", "mercedes", "audi", "ford", "ferrari", "kia", "honda", "mazda", "nissan",
+                   "renault", "skoda", "lada", "toyota", "volkwagen", "hyundai", "subaru", "suzuki", "mitsubishi", "scion", "isuzu", "infinity",
+                   "lexus", "daihatsu", "gmc", "pontiac", "mercury", "tesla", "hummer", "chrysler", "dodge", "oldsmobile",
+                   "gaz", "aurus", "porsche", "daewoo", "ssangyong", "genesis", "astonmartin", "fiat", "jaguar", "lamborghini", "peugeot",
+                   "seat", "saab", "zaz", "smart", "brilliance"};
+    string cities[34] = {"amsterdam", "madrid", "berlin", "rotterdam", "warsaw", "poznan", "gdansk", "krakow", "hamburg",
+                     "volokolamsk", "michurinsk", "tambov", "ryazan", "lipetsk", "voronezh", "eindhoven", "london",
+                     "alicante", "sevilla", "porto", "malaga", "paris", "cologne", "kiel", "leeds", "manchester",
+                     "birmingham", "albuquerque", "minsk", "grodno", "granada", "kiev", "vladivostok", "bremen"};
+    string airlines[12] = {"ryanair", "klm", "aeroflot", "easyjet", "wizzair", "pobeda", "canaryfly", "binter", "lot", "lufthansa", "eurowings", "iberia"};
 
 
 while (true) {
@@ -109,9 +119,17 @@ while (true) {
         cout << " " << char(186);
         cout << "Choose your topic for this game: " << endl;
         cout << " " << char(186);
-        cout << " [1] IT" << endl;
+        cout << " [1] Crypto" << endl;
         cout << " " << char(186);
-        cout << " [2] crypto" << endl;
+        cout << " [2] Films" << endl;
+        cout << " " << char(186);
+        cout << " [3] Programming languages" << endl;
+        cout << " " << char(186);
+        cout << " [4] Cars" << endl;
+        cout << " " << char(186);
+        cout << " [5] Cities" << endl;
+        cout << " " << char(186);
+        cout << " [6] Airlines" << endl;
         cout << " " << char(186);
         cout << " [0] exit" << endl;
         cout << " " << char(186);
@@ -126,14 +144,38 @@ while (true) {
         cin.ignore(1024, '\n');
 
         if (topic == 1) {
-            answer = IT[gen() % 10];
+            _topic = "Crypto";
+            answer = crypto[gen() % 20];
+
             system("cls");
             break;
         } else if (topic == 2) {
-            answer = crypto[gen() % 10];
+            answer = films[gen() % 22];
+            _topic = "Films";
             system("cls");
             break;
-        } else if (topic == 0) {
+        } else if (topic == 3) {
+            answer = programmingLanguages[gen() % 26];
+            _topic = "Programming languages";
+            system("cls");
+            break;
+        } else if (topic == 4) {
+            answer = cars[gen() % 64];
+            _topic = "Cars";
+            system("cls");
+            break;
+        } else if (topic == 5) {
+            answer = cities[gen() % 34];
+            _topic = "Cities";
+            system("cls");
+            break;
+        } else if (topic == 6) {
+            answer = airlines[gen() % 12];
+            _topic = "Airlines";
+            system("cls");
+            break;
+        }
+        else if (topic == 0) {
             system("cls");
             cout << "Ok, see you next time!" << endl;
             system("pause");
@@ -163,6 +205,8 @@ while (true) {
         char inputChar = ' ';
         printHangman(lives);
 
+        cout << "Current topic is " << _topic << endl;
+        cout << endl;
         cout << "You currently have " << lives << " lives" << endl;
         for (int i = 0; i < toBeGuessed.size(); i++) {
             if (toBeGuessed[i] != '*') {
