@@ -78,7 +78,7 @@ int main() {
 
 
     bool wishToContinue = true;
-    int topic;
+    string topic;
     string _topic;
     string answer;
 
@@ -143,39 +143,39 @@ while (true) {
         cin.clear();
         cin.ignore(1024, '\n');
 
-        if (topic == 1) {
+        if (topic == "1") {
             _topic = "Crypto";
             answer = crypto[gen() % 20];
 
             system("cls");
             break;
-        } else if (topic == 2) {
+        } else if (topic == "2") {
             answer = films[gen() % 22];
             _topic = "Films";
             system("cls");
             break;
-        } else if (topic == 3) {
+        } else if (topic == "3") {
             answer = programmingLanguages[gen() % 26];
             _topic = "Programming languages";
             system("cls");
             break;
-        } else if (topic == 4) {
+        } else if (topic == "4") {
             answer = cars[gen() % 64];
             _topic = "Cars";
             system("cls");
             break;
-        } else if (topic == 5) {
+        } else if (topic == "5") {
             answer = cities[gen() % 34];
             _topic = "Cities";
             system("cls");
             break;
-        } else if (topic == 6) {
+        } else if (topic == "6") {
             answer = airlines[gen() % 12];
             _topic = "Airlines";
             system("cls");
             break;
         }
-        else if (topic == 0) {
+        else if (topic == "0") {
             system("cls");
             cout << "Ok, see you next time!" << endl;
             system("pause");
